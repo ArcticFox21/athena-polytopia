@@ -1,4 +1,5 @@
 const { ipcRenderer } = require('electron');
+const path = require('path');
 
 function makeButtonAvailable(button) {
     button.classList.remove("step--unavailable");
@@ -13,7 +14,8 @@ function addPolytopiaDirSelectCallback(finalButton) {
     const polytopiaDirSelect = document.getElementById('polytopia_dir');
     polytopiaDirSelect.oninput = function() {
         const filePath = polytopiaDirSelect.files[0].path;
-        window.polytopiaDirectory = filePath.split('/').slice(0, -1).join('/');
+        window.polytopiaDirectory = filePath
+            .split(path.sep).slice(0, -1).join(path.sep);
         showPath('polytopia_dir_path', window.polytopiaDirectory);
         if (window.modFile !== null) {
             makeButtonAvailable(finalButton);
