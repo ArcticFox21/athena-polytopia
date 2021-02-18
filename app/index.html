@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Athena - Modding for Polytopia</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="app.js"/></script>
+    <meta http-equiv="Content-Security-Policy"
+        content="script-src 'self' 'unsafe-inline';" />
+</head>
+
+<body>
+    <h1>Athena: Polytopia Modder by Artemis</h1>
+    <label for="polytopia_dir" class="step step--available">
+        <div class="step__major">
+            1. Find your Polytopia installation.
+        </div>
+        <div class="step__minor">
+            You can find this on Steam by going to Polytopia → ⚙ → Manage → Browse local files.
+        </div>
+        <input type="file" id="polytopia_dir"
+            class="hidden_input" webkitdirectory/>
+        <div class="step__minor step__minor--path"
+            id="polytopia_dir_path"></div>
+    </label>
+    <label for="mod_file" class="step step--available">
+        <div class="step__major">
+            2. Select a mod.
+        </div>
+        <div class="step__minor">
+            Only one mod at a time is currently supported. Watch this space!
+        </div>
+        <input type="file" id="mod_file" class="hidden_input"/>
+        <div class="step__minor step__minor--path" id="mod_file_path"></div>
+    </label>
+    <div class="step step--unavailable" id="final_button">
+        <div class="step__major">
+            3. Install!
+        </div>
+        <div class="step__minor">
+            This process may take a few minutes. Make sure Polytopia is not open while you do this.
+        </div>
+    </div>
+    <div class="loading loading--hidden" id="loading">
+        <div class="loading__spinner"></div>
+    </div>
+</body>
+
+</html>

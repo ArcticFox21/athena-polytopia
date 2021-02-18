@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
+
+body {
+    background: #111;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fira Mono', monospace, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.step {
+    display: block;
+    background: #222;
+    padding: 2rem 4rem;
+    margin: 1rem;
+    border-radius: 4rem;
+    width: min(800px, 100vw - 12rem - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+}
+
+.step--available {
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.step--available:hover {
+    box-shadow: 10px 10px 20px black;
+    transform: scale(1.02);
+}
+
+.step--unavailable {
+    cursor: not-allowed;
+}
+
+.step__major {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.step--available > .step__major {
+    color: #fff;
+}
+
+.step--unavailable > .step__major {
+    color: #aaa;
+}
+
+.step__minor:last-child {
+    margin-bottom: 0;
+}
+
+.step--available > .step__minor {
+    color: #aaa;
+}
+
+.step--unavailable > .step__minor {
+    color: #888;
+}
+
+.step__minor--path {
+    font-size: 0.8rem;
+}
+
+.hidden_input {
+    display: none;
+}
+
+.loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #222;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading--hidden {
+    display: none;
+}
+
+.loading__spinner {
+    background: #222;
+    border: 1px solid #aaa;
+    border-left: 1px solid #222;
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
