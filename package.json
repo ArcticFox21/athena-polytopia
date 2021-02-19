@@ -1,5 +1,6 @@
 {
   "name": "athena-polytopia",
+  "productName": "Athena Modder",
   "version": "1.0.0",
   "description": "Athena is a mod injector for Polytopia.",
   "main": "index.js",
